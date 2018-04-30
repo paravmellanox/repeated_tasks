@@ -42,7 +42,6 @@ function start_docker()
 NUM_ARGS=$#
 
 if [ $NUM_ARGS -gt 0 ]; then
-	echo $NUM_ARGS
 	DATA_ROOT="--data-root $1"
 	mkdir -p $1
 fi
