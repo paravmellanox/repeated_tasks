@@ -162,7 +162,7 @@ case "$1" in
 	setenforce 0
 	setup_kernel_config_file
 	build_install_cnis
-	build_install_rdma_device_plugin
+	#build_install_rdma_device_plugin
 	setup_cni_cfg_files
 	write_k8s_rep_file
 	install_k8s
@@ -195,6 +195,6 @@ case "$1" in
 	systemctl start docker
 	systemctl start kubelet
 	systemctl status kubelet
-	start_rdma_device_plugin
+	#start_rdma_device_plugin
 ;;
 esac
