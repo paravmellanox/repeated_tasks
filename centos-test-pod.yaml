@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: centos-ib-test1
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - image: centos
+    name: ib-test-ctr
+    resources:
+      limits:
+        mellanox/rdma_devices: 1
+    command:
+    - sh
+    - -c
+    - |
+      ls -l /dev/infiniband
+      sleep 1000000

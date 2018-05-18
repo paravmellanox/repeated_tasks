@@ -168,6 +168,7 @@ case "$1" in
 	install_k8s
 	setup_flannel
 	setup_cgroup_driver
+	systemctl daemon-reload
 ;;
 "setup")
 	if [ $NUM_ARGS -lt 3 ]; then
@@ -179,7 +180,9 @@ case "$1" in
 	API_SERVER_IP=$3
 	setup_k8s_master
 	setup_rdma_device_plugin
+	systemctl daemon-reload
 	setup_kubectl_env
+	setup_flannel
 ;;
 "start")
 	if [ $NUM_ARGS -lt 2 ]; then
